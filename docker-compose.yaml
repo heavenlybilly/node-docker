@@ -1,0 +1,15 @@
+services:
+  node:
+    container_name: node
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PROJECT=${PROJECT}
+        - PORT=${PORT}
+        - NODE_VERSION=${NODE_VERSION}
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
+    
