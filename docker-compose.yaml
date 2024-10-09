@@ -5,11 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        - PROJECT=${PROJECT}
         - PORT=${PORT}
         - NODE_VERSION=${NODE_VERSION}
     ports:
-      - "${PORT}:${PORT}"
-    env_file:
-      - .env
-    
+      - "${PORT}:5173"
+    volumes:
+      - ${PROJECTS_ROOT}:/app

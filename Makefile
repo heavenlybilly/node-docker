@@ -1,6 +1,5 @@
 up:
-	$(eval project_name := $(shell ./enter-name.sh))
-	PROJECT=$(project_name) docker compose up --build
+	docker compose up --build -d
 
 down:
 	docker compose down
